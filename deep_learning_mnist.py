@@ -100,6 +100,7 @@ def train_neural_network(x):
 			epoch_loss = 0
 			for _ in range(int(mnist.train.num_examples/batch_size)):
 				ex, ey = mnist.train.next_batch(batch_size)
+				print(ex)
 				_, c = sess.run([optimizer, cost], feed_dict={x: ex, y: ey})
 				epoch_loss += c
 			#train_writer.add_summary(c, epoch)
